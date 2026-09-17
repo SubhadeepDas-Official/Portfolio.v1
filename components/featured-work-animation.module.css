@@ -1,0 +1,68 @@
+.section {
+  position: relative;
+  height: 100svh;
+  min-height: 100svh;
+  max-height: 100svh;
+  overflow: hidden;
+  background: #dedede;
+  color: #111;
+  isolation: isolate;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.canvas {
+  position: relative;
+  width: min(100%, 96.67svh);
+  height: 100%;
+  margin-inline: auto;
+  container-type: size;
+  overflow: hidden;
+}
+.registration span { position: absolute; transform: translate(-50%, -50%); font-size: 1.9cqw; font-weight: 700; color: #888; opacity: .4; }
+.welcome { position: absolute; left: 13.8%; top: 5.5%; font-size: 2.2cqw; font-weight: 900; line-height: .9; letter-spacing: -.05em; transform: scaleX(1.12); transform-origin: left; }
+.eye { position: absolute; left: 82.3%; top: 5.55%; width: 3.9%; }
+.orangeBlock { position: absolute; left: 42%; top: 5.5%; width: 16%; height: 32%; background: #df4638; }
+.type { position: absolute; left: 13.0747%; top: 15.5556%; width: 73.9943%; height: 12.1528%; margin: 0; }
+.type canvas { display: block; width: 100%; height: 100%; background: url('/images/featured-motion/type-poster.png') center / 100% 100% no-repeat; }
+.type canvas[data-ready="true"] { background: none; }
+.nav { position: absolute; top: 20.6%; width: 3%; height: 3%; padding: 0; background: none; border: 0; cursor: pointer; }
+.nav::after { content: ''; position: absolute; top: 30%; border-top: .85cqw solid transparent; border-bottom: .85cqw solid transparent; }
+.navLeft { left: 2.9%; }
+.navLeft::after { left: 30%; border-left: 1cqw solid #111; }
+.navRight { right: 2.9%; }
+.navRight::after { right: 30%; border-right: 1cqw solid #111; }
+.nav:focus-visible { outline: 2px solid #111; outline-offset: 3px; }
+.author, .role { position: absolute; top: 36.8%; font-size: 1.13cqw; font-weight: 600; letter-spacing: -.025em; line-height: 1; }
+.author { left: 13.8%; }
+.role { right: 13.8%; }
+.fan { position: absolute; inset: 0; pointer-events: none; transform-origin: 50% 104.2%; }
+.card { position: absolute; left: 37.5%; top: 48%; width: 25%; height: 34%; border-radius: 2.2cqw; overflow: hidden; transform-origin: 50% 168%; box-shadow: 0 1.2cqw 3cqw rgba(0, 0, 0, 0.38); }
+.artwork { object-fit: cover; }
+.gear { transform: rotate(-112deg); z-index: 14; background: #0d0d0d; }
+.deep { transform: rotate(-84deg); z-index: 18; background: #1a1a1a; }
+.galaxy { transform: rotate(-56deg); z-index: 22; background: #050505; }
+.orange { transform: rotate(-28deg); z-index: 26; background: #df4638; }
+.cardEye { position: absolute; width: 78%; left: 11%; top: 24%; }
+.cardMark { position: absolute; top: 4%; left: 49%; font-size: 1cqw; }
+.bottomMark { top: auto; bottom: 4%; transform: rotate(180deg); }
+.portrait { transform: rotate(0deg); z-index: 30; background: #111; }
+.portrait .artwork { filter: grayscale(1) contrast(1.1); object-position: 50% 35%; transform: scale(1.1); transform-origin: 50% 25%; }
+.white { transform: rotate(28deg); z-index: 26; background: #f4f4f4; }
+.white .artwork { transform: scale(1.05); }
+.right { transform: rotate(56deg); z-index: 22; background: #080808; }
+.circle { position: absolute; left: 27%; top: 82%; width: 46%; aspect-ratio: 1; border-radius: 50%; background: #e7e7e5; box-shadow: inset 0 1.8cqw 3.5cqw #0000001c, 0 -.4cqw 1.5cqw #00000012; z-index: 5; }
+.circle svg { position: absolute; inset: 0; width: 100%; color: #00000012; }
+.circle text { fill: currentColor; font-size: 17px; letter-spacing: 1px; }
+.me { position: absolute; top: 8.3%; left: 0; width: 100%; text-align: center; font-weight: 900; font-size: 2.2cqw; line-height: 1; }
+.me span { display: block; width: 0; margin: 0 auto .7cqw; border-left: .75cqw solid transparent; border-right: .75cqw solid transparent; border-bottom: 1.3cqw solid #111; }
+@media (max-width: 1099px) {
+  .canvas { width: min(100%, 96.67svh); }
+}
+@media (max-aspect-ratio: 3/4) {
+  .canvas { height: min(100svh, 135vw); top: 50%; transform: translateY(-50%); }
+  .welcome { font-size: 2.8cqw; }
+  .author, .role { font-size: 1.45cqw; }
+  .role { right: 8%; }
+  .author { left: 8%; }
+}
+
+:global(main):has(.section[data-in-view="true"]) > :global(header) { visibility: hidden; }
